@@ -1,164 +1,101 @@
-import React, { useState } from 'react';
-import { ArrowRight, X, ExternalLink, ShieldCheck, Trophy, Sparkles } from 'lucide-react';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
-export default function PartnershipSection() {
-  const [modalOpen, setModalOpen] = useState(false);
+export default function PartnershipSection({ onNavigate }) {
+  const handleExplore = () => {
+    if (onNavigate) {
+      onNavigate();
+    } else {
+      window.history.pushState({}, '', '/partnership');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <>
-      <section 
-        id="partnership" 
-        className="relative w-full bg-[#2A0213] text-white overflow-hidden"
+    <section 
+      id="partnership" 
+      className="relative w-full bg-[#2A0213] text-white overflow-hidden"
+    >
+      {/* Background container using the clean Burnley FC & Turf Moor image */}
+      <div 
+        className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[680px] xl:min-h-[720px] bg-no-repeat bg-cover bg-right lg:bg-[center_right] flex items-center"
+        style={{
+          backgroundImage: `url('/images/burnley-bg-clean.jpg')`,
+        }}
       >
-        {/* Background container using the clean Burnley FC & Turf Moor image */}
-        <div 
-          className="relative w-full min-h-[580px] sm:min-h-[640px] lg:min-h-[680px] xl:min-h-[720px] bg-no-repeat bg-cover bg-right lg:bg-[center_right] flex items-center"
-          style={{
-            backgroundImage: `url('/images/burnley-bg-clean.jpg')`,
-          }}
-        >
-          {/* Subtle claret gradient wash on the left to ensure seamless text legibility across all viewport widths */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2A0213] via-[#2A0213]/90 md:via-[#2A0213]/70 to-transparent lg:max-w-[55%] pointer-events-none" />
+        {/* Subtle claret gradient wash on the left to ensure seamless text legibility across all viewport widths */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2A0213] via-[#2A0213]/90 md:via-[#2A0213]/70 to-transparent lg:max-w-[55%] pointer-events-none" />
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 w-full">
-            <div className="max-w-xl lg:max-w-lg xl:max-w-xl z-10">
-              
-              {/* Eyebrow: OFFICIAL PARTNER */}
-              <p className="text-[11px] sm:text-[12px] font-semibold tracking-[0.25em] uppercase text-white/80 mb-5">
-                OFFICIAL PARTNER
-              </p>
-
-              {/* Logos Lockup: HtoEAU | Burnley FC */}
-              <div className="flex items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
-                {/* HtoEAU Logo / Wordmark */}
-                <div className="flex items-center">
-                  <img
-                    src="/images/htoeau-logo.png"
-                    alt="HtoEAU"
-                    className="h-7 sm:h-8 w-auto brightness-0 invert object-contain"
-                  />
-                </div>
-
-                {/* Vertical Divider */}
-                <div className="h-7 sm:h-8 w-[1px] bg-white/30" />
-
-                {/* Burnley Football Club Lockup */}
-                <div className="flex items-center gap-2.5">
-                  <img 
-                    src="/images/burnley-crest.png" 
-                    alt="Burnley Football Club Crest"
-                    className="h-8 sm:h-9 w-auto object-contain brightness-110 drop-shadow-sm"
-                  />
-                  <div className="flex flex-col text-left leading-none">
-                    <span className="text-[11px] sm:text-[12px] font-extrabold tracking-wider uppercase text-white">
-                      BURNLEY
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 mt-0.5">
-                      FOOTBALL CLUB
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Main Headline */}
-              <h2 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold text-white tracking-tight leading-[1.08] mb-5 sm:mb-6">
-                <span className="block">Matchday</span>
-                <span className="block">hydration.</span>
-                <span className="block italic text-[#8EE2F0] font-black">
-                  Engineered.
-                </span>
-              </h2>
-
-              {/* Supporting Copy */}
-              <p className="text-sm sm:text-base lg:text-[15px] text-white/85 leading-relaxed max-w-lg mb-8 sm:mb-10 font-normal">
-                HtoEAU is proud to partner with Burnley FC, uniting performance, community and a shared commitment to a healthier tomorrow.
-              </p>
-
-              {/* Call-to-Action Button */}
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#8EE2F0] hover:bg-[#A3EAF6] active:scale-[0.98] text-[#10232F] text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 shadow-md hover:shadow-lg group"
-                >
-                  <span>Explore the Partnership</span>
-                  <ArrowRight className="w-4 h-4 text-[#10232F] group-hover:translate-x-1 transition-transform duration-200" />
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Details Interactive Modal */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
-          <div className="relative w-full max-w-lg bg-[#2A0213] text-white rounded-2xl border border-white/20 p-6 sm:p-8 shadow-2xl">
-            {/* Close Button */}
-            <button
-              type="button"
-              onClick={() => setModalOpen(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Modal Header */}
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-[#8EE2F0] text-[#10232F]">
-                OFFICIAL CLUB PARTNERSHIP
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-extrabold text-white mb-3">
-              HtoEAU × Burnley Football Club
-            </h3>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 w-full">
+          <div className="max-w-xl lg:max-w-lg xl:max-w-xl z-10">
             
-            <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-6">
-              As the Official Hydration Partner of Burnley FC, HtoEAU supplies first-team squads and athletic staff with molecular hydrogen-infused Icelandic glacial water across matchdays at Turf Moor and training facilities.
+            {/* Eyebrow: OFFICIAL PARTNER */}
+            <p className="text-[11px] sm:text-[12px] font-semibold tracking-[0.25em] uppercase text-white/80 mb-5">
+              OFFICIAL PARTNER
             </p>
 
-            {/* Key Partnership Pillars */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                <Trophy className="w-4 h-4 text-[#8EE2F0] flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Elite Pitch-Side Performance</h4>
-                  <p className="text-[11px] text-white/70">Optimized cellular hydration and post-match recovery for high-intensity 90-minute outputs.</p>
-                </div>
+            {/* Logos Lockup: HtoEAU | Burnley FC */}
+            <div className="flex items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
+              {/* HtoEAU Logo / Wordmark */}
+              <div className="flex items-center">
+                <img
+                  src="/images/htoeau-logo.png"
+                  alt="HtoEAU"
+                  className="h-7 sm:h-8 w-auto brightness-0 invert object-contain"
+                />
               </div>
 
-              <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                <ShieldCheck className="w-4 h-4 text-[#8EE2F0] flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Turf Moor Sustainability</h4>
-                  <p className="text-[11px] text-white/70">100% recyclable, plastic-free aluminum cans across all matchday hospitality and concourses.</p>
-                </div>
-              </div>
+              {/* Vertical Divider */}
+              <div className="h-7 sm:h-8 w-[1px] bg-white/30" />
 
-              <div className="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
-                <Sparkles className="w-4 h-4 text-[#8EE2F0] flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-xs font-bold text-white">Community & Youth Initiatives</h4>
-                  <p className="text-[11px] text-white/70">Empowering grassroots health and athletic education programs across Lancashire.</p>
+              {/* Burnley Football Club Lockup */}
+              <div className="flex items-center gap-2.5">
+                <img 
+                  src="/images/burnley-crest.png" 
+                  alt="Burnley Football Club Crest"
+                  className="h-8 sm:h-9 w-auto object-contain brightness-110 drop-shadow-sm"
+                />
+                <div className="flex flex-col text-left leading-none">
+                  <span className="text-[11px] sm:text-[12px] font-extrabold tracking-wider uppercase text-white">
+                    BURNLEY
+                  </span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 mt-0.5">
+                    FOOTBALL CLUB
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-end gap-3 pt-2 border-t border-white/10">
+            {/* Main Headline */}
+            <h2 className="text-4xl sm:text-5xl lg:text-[54px] xl:text-[60px] font-extrabold text-white tracking-tight leading-[1.08] mb-5 sm:mb-6">
+              <span className="block">Matchday</span>
+              <span className="block">hydration.</span>
+              <span className="block italic text-[#8EE2F0] font-black">
+                Engineered.
+              </span>
+            </h2>
+
+            {/* Supporting Copy */}
+            <p className="text-sm sm:text-base lg:text-[15px] text-white/85 leading-relaxed max-w-lg mb-8 sm:mb-10 font-normal">
+              HtoEAU is proud to partner with Burnley FC, uniting performance, community and a shared commitment to a healthier tomorrow.
+            </p>
+
+            {/* Call-to-Action Button */}
+            <div>
               <button
                 type="button"
-                onClick={() => setModalOpen(false)}
-                className="px-5 py-2.5 rounded-full bg-[#8EE2F0] text-[#10232F] text-xs font-bold hover:bg-[#A3EAF6] transition-colors"
+                onClick={handleExplore}
+                className="inline-flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#8EE2F0] hover:bg-[#A3EAF6] active:scale-[0.98] text-[#10232F] text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 shadow-md hover:shadow-lg group"
               >
-                Close
+                <span>Explore the Partnership</span>
+                <ArrowRight className="w-4 h-4 text-[#10232F] group-hover:translate-x-1 transition-transform duration-200" />
               </button>
             </div>
+
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </section>
   );
 }
