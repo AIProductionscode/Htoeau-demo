@@ -1,11 +1,11 @@
 export const siteData = {
   navigation: [
-    { name: 'Shop', href: '#shop' },
-    { name: 'Benefits', href: '#benefits' },
-    { name: 'Science', href: '#science' },
-    { name: 'About Us', href: '#about' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Shop', href: 'https://htoeau.com/htoeau-products/' },
+    { name: 'Benefits', href: 'https://htoeau.com/benefits/' },
+    { name: 'Science', href: 'https://htoeau.com/science/' },
+    { name: 'About Us', href: 'https://htoeau.com/about/' },
+    { name: 'FAQ', href: 'https://htoeau.com/faq/' },
+    { name: 'Contact Us', href: 'https://htoeau.com/contact/' },
   ],
   hero: {
     badge: 'Icelandic Glacial Water & Molecular Hydrogen',

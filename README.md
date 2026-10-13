@@ -15,7 +15,8 @@ A high-performance, responsive React + Vite + Tailwind CSS rebuild of the **HtoE
 1. **Header & Navigation**: Responsive sticky navigation with brand logo, quick navigation links, utility icons, and mobile menu drawer.
 2. **Hero Section**: Exact supplied glacial landscape background with dual product cans, multiline headline, CTAs, and scientific benefit indicators.
 3. **Testimonial Carousel**: Customer quotation with star rating, verified attribution, and previous/next carousel controls.
-4. **Product Showcase**: Teal brand section displaying 3 white product cards (Still Hydrogen, Sparkling Hydrogen, and Product Collection) with specs and bottom benefits row.
+4. **Official Partnership (Burnley FC)**: Official matchday hydration partnership banner at Turf Moor, featuring collaborative commemorative cans and interactive details.
+5. **Product Showcase**: Teal brand section displaying 3 white product cards (Still Hydrogen, Sparkling Hydrogen, and Product Collection) with specs and bottom benefits row.
 5. **Hydration Process**: Asymmetric editorial layout with interactive step expansion.
 6. **Dark Scientific Hydration**: Navy translucent cards highlighting cellular recovery, neural clarity, resilience, and mitochondrial performance.
 7. **Controlled Human Research**: Central product display with clinical validation blocks and scientific markers.
