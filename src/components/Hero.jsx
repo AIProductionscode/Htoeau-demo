@@ -15,7 +15,7 @@ export default function Hero() {
         }}
       >
         {/* Soft gradient wash on mobile/tablet to ensure text legibility while keeping the cans crisp */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60 lg:via-white/30 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent md:via-white/60 lg:via-white/30 pointer-events-none" /> */}
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 w-full">
           <div className="max-w-xl lg:max-w-2xl">
