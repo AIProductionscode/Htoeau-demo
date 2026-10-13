@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TestimonialCarousel from './components/TestimonialCarousel';
-import BurnleyPartnerSection from './components/BurnleyPartnerSection';
+import PartnershipSection from './components/PartnershipSection';
 import ProductSection from './components/ProductSection';
 import HydrationProcess from './components/HydrationProcess';
 import ScienceSection from './components/ScienceSection';
@@ -26,8 +26,8 @@ export default function App() {
         {/* 3. Customer testimonial carousel */}
         <TestimonialCarousel />
 
-        {/* Official Partnership Section - Burnley FC */}
-        <BurnleyPartnerSection />
+        {/* Official Partnership Section (Burnley FC) */}
+        <PartnershipSection />
 
         {/* 4. Teal product showcase section with three product cards */}
         <ProductSection />
