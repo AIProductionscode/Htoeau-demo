@@ -23,7 +23,7 @@ export default function PartnershipSectionAlt({ onNavigate }) {
   return (
     <section 
       id="partnership" 
-      className="relative w-full overflow-hidden bg-[#EDEEF1]"
+      className="relative my-5 w-full overflow-hidden bg-[#EDEEF1]"
     >
       {/* =========================================================================
           DESKTOP PRESENTATION (lg+)

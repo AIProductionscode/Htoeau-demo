@@ -67,8 +67,7 @@ export default function App() {
         {/* 2. Main hero with icy water background and product cans */}
         <Hero />
 
-        {/* 3. Customer testimonial carousel */}
-        <TestimonialCarousel />
+       
 
         {/* =========================================================================
             OFFICIAL PARTNERSHIP SECTION (BURNLEY FC) - DESIGN DIRECTION OPTIONS
@@ -80,6 +79,8 @@ export default function App() {
 
         {/* OPTION 2: Alternative Client-Approved Partnership Section (Active) */}
         <PartnershipSectionAlt onNavigate={navigateToPartnership} />
+ {/* 3. Customer testimonial carousel */}
+        <TestimonialCarousel />
 
         {/* 4. Teal product showcase section with three product cards */}
         <ProductSection />
