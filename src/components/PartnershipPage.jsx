@@ -14,7 +14,7 @@ export default function PartnershipPage({ onNavigateHome }) {
   return (
     <div className="min-h-screen bg-[#38041B] text-white flex flex-col font-sans antialiased selection:bg-[#8EE2F0]/25 selection:text-[#10232F]">
       
-      {/* 1. Header Bar: HtoEAU X BURNLEY FC */}
+      {/* 1. Header Bar */}
       <header className="sticky top-0 z-50 bg-[#141C24] border-b border-white/10 px-4 sm:px-6 lg:px-8 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
@@ -27,26 +27,6 @@ export default function PartnershipPage({ onNavigateHome }) {
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Home</span>
           </button>
-
-          {/* Central Logo Lockup: HtoEAU X BURNLEY FC */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            <img
-              src="/images/htoeau-logo.png"
-              alt="HtoEAU"
-              className="h-6 sm:h-7 w-auto object-contain brightness-0 invert"
-            />
-            <span className="text-white/40 text-xs sm:text-sm font-light">X</span>
-            <div className="flex items-center gap-2">
-              <span className="text-xs sm:text-sm font-black tracking-wider uppercase text-white italic">
-                BURNLEY
-              </span>
-              <img
-                src="/images/burnley-crest.png"
-                alt="Burnley FC Crest"
-                className="h-6 sm:h-7 w-auto object-contain"
-              />
-            </div>
-          </div>
 
           {/* Right Action */}
           <a
@@ -75,6 +55,38 @@ export default function PartnershipPage({ onNavigateHome }) {
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 w-full">
               <div className="max-w-xl">
+                {/* Logos Lockup: HtoEAU | Burnley FC (matching Partnership Section) */}
+                <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+                  {/* HtoEAU Logo / Wordmark */}
+                  <div className="flex items-center">
+                    <img
+                      src="/images/htoeau-logo.png"
+                      alt="HtoEAU"
+                      className="h-10 sm:h-12 md:h-14 w-auto brightness-0 invert object-contain"
+                    />
+                  </div>
+
+                  {/* Vertical Divider */}
+                  <div className="h-9 sm:h-11 md:h-12 w-[1.5px] bg-white/30" />
+
+                  {/* Burnley Football Club Lockup */}
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src="/images/burnley-crest.png" 
+                      alt="Burnley Football Club Crest"
+                      className="h-11 sm:h-13 md:h-14 w-auto object-contain brightness-110 drop-shadow-sm"
+                    />
+                    <div className="flex flex-col text-left leading-tight">
+                      <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider uppercase text-white">
+                        BURNLEY
+                      </span>
+                      <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold tracking-wider uppercase text-white/90 mt-0.5">
+                        FOOTBALL CLUB
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold text-white tracking-tight leading-[1.15] mb-4">
                   Official Hydration<br />
                   and performance<br />

@@ -36,31 +36,31 @@ export default function PartnershipSection({ onNavigate }) {
             </p>
 
             {/* Logos Lockup: HtoEAU | Burnley FC */}
-            <div className="flex items-center gap-4 sm:gap-5 mb-8 sm:mb-10">
+            <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
               {/* HtoEAU Logo / Wordmark */}
               <div className="flex items-center">
                 <img
                   src="/images/htoeau-logo.png"
                   alt="HtoEAU"
-                  className="h-7 sm:h-8 w-auto brightness-0 invert object-contain"
+                  className="h-10 sm:h-12 md:h-14 w-auto brightness-0 invert object-contain"
                 />
               </div>
 
               {/* Vertical Divider */}
-              <div className="h-7 sm:h-8 w-[1px] bg-white/30" />
+              <div className="h-9 sm:h-11 md:h-12 w-[1.5px] bg-white/30" />
 
               {/* Burnley Football Club Lockup */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <img 
                   src="/images/burnley-crest.png" 
                   alt="Burnley Football Club Crest"
-                  className="h-8 sm:h-9 w-auto object-contain brightness-110 drop-shadow-sm"
+                  className="h-11 sm:h-13 md:h-14 w-auto object-contain brightness-110 drop-shadow-sm"
                 />
-                <div className="flex flex-col text-left leading-none">
-                  <span className="text-[11px] sm:text-[12px] font-extrabold tracking-wider uppercase text-white">
+                <div className="flex flex-col text-left leading-tight">
+                  <span className="text-xs sm:text-sm md:text-base font-extrabold tracking-wider uppercase text-white">
                     BURNLEY
                   </span>
-                  <span className="text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 mt-0.5">
+                  <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold tracking-wider uppercase text-white/90 mt-0.5">
                     FOOTBALL CLUB
                   </span>
                 </div>

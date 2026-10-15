@@ -39,35 +39,35 @@ export default function PartnershipSectionAlt({ onNavigate }) {
           <div className="max-w-xl xl:max-w-2xl">
             
             {/* Logos Lockup: HtoEAU ✕ Burnley FC */}
-            <div className="flex items-center gap-5 sm:gap-6 mb-6">
+            <div className="flex items-center gap-6 sm:gap-7 mb-7">
               {/* HtoEAU Wordmark & Tagline */}
               <div className="flex flex-col">
                 <div className="flex items-baseline">
-                  <span className="text-2xl xl:text-[27px] font-bold text-[#141414] tracking-tight font-sans">
+                  <span className="text-3xl xl:text-[34px] font-bold text-[#141414] tracking-tight font-sans">
                     HtoEAU
                   </span>
-                  <span className="text-[10px] text-[#141414] font-medium ml-0.5">®</span>
+                  <span className="text-xs text-[#141414] font-medium ml-0.5">®</span>
                 </div>
-                <span className="text-[8.5px] font-semibold tracking-[0.28em] text-[#555555] uppercase mt-0.5">
+                <span className="text-[9.5px] xl:text-[10px] font-semibold tracking-[0.28em] text-[#555555] uppercase mt-0.5">
                   MORE THAN WATER
                 </span>
               </div>
 
               {/* Thin Cross Separator */}
-              <span className="text-[#888888] text-base font-light select-none">✕</span>
+              <span className="text-[#888888] text-xl font-light select-none">✕</span>
 
               {/* Burnley FC Crest + Text */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <img 
                   src="/images/burnley-crest.png" 
                   alt="Burnley Football Club Crest"
-                  className="h-9 xl:h-10 w-auto object-contain drop-shadow-xs"
+                  className="h-12 xl:h-14 w-auto object-contain drop-shadow-xs"
                 />
-                <div className="flex flex-col text-left leading-[1.05]">
-                  <span className="text-[11.5px] xl:text-[12.5px] font-black tracking-wider uppercase text-[#6C1D45]">
+                <div className="flex flex-col text-left leading-[1.08]">
+                  <span className="text-sm xl:text-[15px] font-black tracking-wider uppercase text-[#6C1D45]">
                     BURNLEY
                   </span>
-                  <span className="text-[9.5px] xl:text-[10.5px] font-bold tracking-wider uppercase text-[#6C1D45] mt-0.5">
+                  <span className="text-[11px] xl:text-[12px] font-bold tracking-wider uppercase text-[#6C1D45] mt-0.5">
                     FOOTBALL CLUB
                   </span>
                 </div>
@@ -114,32 +114,32 @@ export default function PartnershipSectionAlt({ onNavigate }) {
         <div className="max-w-lg mx-auto px-5 sm:px-6">
           
           {/* Logos Lockup */}
-          <div className="flex items-center gap-4 sm:gap-5 mb-5 sm:mb-6">
+          <div className="flex items-center gap-5 sm:gap-6 mb-6">
             <div className="flex flex-col">
               <div className="flex items-baseline">
-                <span className="text-xl sm:text-2xl font-bold text-[#141414] tracking-tight font-sans">
+                <span className="text-2xl sm:text-3xl font-bold text-[#141414] tracking-tight font-sans">
                   HtoEAU
                 </span>
-                <span className="text-[9px] text-[#141414] font-medium ml-0.5">®</span>
+                <span className="text-[10px] text-[#141414] font-medium ml-0.5">®</span>
               </div>
-              <span className="text-[7.5px] sm:text-[8px] font-semibold tracking-[0.25em] text-[#555555] uppercase mt-0.5">
+              <span className="text-[8.5px] sm:text-[9.5px] font-semibold tracking-[0.25em] text-[#555555] uppercase mt-0.5">
                 MORE THAN WATER
               </span>
             </div>
 
-            <span className="text-[#888888] text-sm font-light select-none">✕</span>
+            <span className="text-[#888888] text-base font-light select-none">✕</span>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <img 
                 src="/images/burnley-crest.png" 
                 alt="Burnley Football Club Crest"
-                className="h-8 sm:h-9 w-auto object-contain"
+                className="h-10 sm:h-12 w-auto object-contain"
               />
-              <div className="flex flex-col text-left leading-[1.05]">
-                <span className="text-[11px] sm:text-[12px] font-black tracking-wider uppercase text-[#6C1D45]">
+              <div className="flex flex-col text-left leading-[1.08]">
+                <span className="text-xs sm:text-sm font-black tracking-wider uppercase text-[#6C1D45]">
                   BURNLEY
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-bold tracking-wider uppercase text-[#6C1D45] mt-0.5">
+                <span className="text-[9.5px] sm:text-[10.5px] font-bold tracking-wider uppercase text-[#6C1D45] mt-0.5">
                   FOOTBALL CLUB
                 </span>
               </div>
