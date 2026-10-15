@@ -1,6 +1,21 @@
 import React from 'react';
-import { Check, Droplets, Sparkles, ShieldCheck } from 'lucide-react';
+import { Droplets, Sparkles, ShieldCheck } from 'lucide-react';
 import { siteData } from '../data/siteData';
+
+const benefits = [
+  {
+    icon: Droplets,
+    text: 'Hydrogen-infused for advanced hydration',
+  },
+  {
+    icon: Sparkles,
+    text: 'Clean, stimulant-free formulation',
+  },
+  {
+    icon: ShieldCheck,
+    text: 'Developed for modern lifestyles',
+  },
+];
 
 export default function Hero() {
   const { hero } = siteData;
@@ -8,62 +23,51 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       {/* =========================================================================
-          MOBILE & TABLET LAYOUT (< lg)
-          Faithfully matches the mobile reference screenshot layout
+          MOBILE LAYOUT (lg:hidden)
+          Vertical stacked layout: content on top, product cans image below.
+          Retains the exact brand font styles, weights, and colors.
           ========================================================================= */}
       <div className="lg:hidden relative w-full bg-white overflow-hidden pt-8 sm:pt-12">
         <div className="max-w-md mx-auto px-5 sm:px-6">
-          {/* Mobile Multiline Headline */}
-          <h1 className="text-[28px] sm:text-[34px] font-light text-[#0A3641] tracking-tight leading-[1.18] mb-4 sm:mb-5">
-            <span className="block">Hydration, Engineered</span>
-            <span className="block">Beyond Simple Water</span>
-            <span className="block">Hydrogen Water. Tested.</span>
-            <span className="block">Trusted.</span>
+          {/* Multiline Headline */}
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight leading-[1.12] mb-5 sm:mb-6">
+            <span className="block">Hydration,</span>
+            <span className="block">Engineered Beyond</span>
+            <span className="block">Simple Water.</span>
+            <span className="block text-brand-teal mt-1">Hydrogen Water.</span>
+            <span className="block text-brand-navy">Tested. Trusted.</span>
           </h1>
 
-          {/* Mobile Supporting Copy */}
-          <p className="text-[13px] sm:text-sm font-semibold text-[#0A3641] leading-relaxed mb-6">
-            Exceptionally pure Icelandic glacial water, precision-infused with dissolved molecular hydrogen. Clean, measured and formulated for those who expect more from hydration.
+          {/* Supporting Copy */}
+          <p className="text-sm sm:text-base text-brand-muted leading-relaxed mb-6 sm:mb-8 font-normal">
+            {hero.subheadline}
           </p>
 
-          {/* Mobile CTA Button */}
-          <div className="mb-6">
+          {/* CTA Button */}
+          <div className="mb-6 sm:mb-8">
             <a
               href="#shop"
-              className="w-full block py-3.5 px-6 rounded-full bg-[#007E94] hover:bg-[#006F83] active:scale-[0.99] text-white text-[15px] sm:text-base font-semibold text-center tracking-normal shadow-sm transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-brand-teal text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:bg-brand-teal-dark active:scale-[0.98] transition-all shadow-md hover:shadow-lg group"
             >
-              Try HtoEAU Now
+              <span>{hero.cta}</span>
             </a>
           </div>
 
-          {/* Mobile Vertical Benefit Indicators */}
-          <div className="space-y-3.5 mb-2 relative z-10">
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-[#008CA6] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
-                <Check className="w-3 h-3 stroke-[3]" />
-              </div>
-              <span className="text-[13px] sm:text-sm font-medium text-[#0A3641]">
-                Hydrogen-infused for advanced hydration
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-[#008CA6] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
-                <Check className="w-3 h-3 stroke-[3]" />
-              </div>
-              <span className="text-[13px] sm:text-sm font-medium text-[#0A3641]">
-                Clean, stimulant-free formulation
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-[#008CA6] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
-                <Check className="w-3 h-3 stroke-[3]" />
-              </div>
-              <span className="text-[13px] sm:text-sm font-medium text-[#0A3641]">
-                Developed for modern lifestyles
-              </span>
-            </div>
+          {/* Benefit Indicators (Vertical Stack Layout for Mobile) */}
+          <div className="pt-4 border-t border-brand-teal/15 space-y-3.5 mb-2 relative z-10">
+            {benefits.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-full bg-brand-ice-blue flex items-center justify-center flex-shrink-0 text-brand-teal">
+                    <Icon className="w-3.5 h-3.5 text-brand-cyan" />
+                  </div>
+                  <span className="text-[12px] sm:text-[13px] font-semibold text-brand-navy/90 tracking-tight">
+                    {item.text}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -78,7 +82,7 @@ export default function Hero() {
       </div>
 
       {/* =========================================================================
-          DESKTOP LAYOUT (lg+)
+          DESKTOP LAYOUT (hidden lg:flex)
           Full desktop presentation with 1920x800 background
           ========================================================================= */}
       <div 
@@ -89,7 +93,6 @@ export default function Hero() {
       >
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24 w-full">
           <div className="max-w-xl lg:max-w-2xl">
-            
             {/* Desktop Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-brand-navy tracking-tight leading-[1.12] mb-5 sm:mb-6">
               <span className="block">Hydration,</span>
@@ -114,36 +117,22 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Desktop Benefit Indicators */}
+            {/* Benefit Indicators (3-column Grid Layout) */}
             <div className="pt-4 border-t border-brand-teal/15 grid grid-cols-3 gap-4 max-w-lg">
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-brand-ice-blue flex items-center justify-center flex-shrink-0 text-brand-teal">
-                  <Droplets className="w-3.5 h-3.5 text-brand-cyan" />
-                </div>
-                <span className="text-[12px] font-semibold text-brand-navy/90 tracking-tight">
-                  Hydrogen-infused for advanced hydration
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-brand-ice-blue flex items-center justify-center flex-shrink-0 text-brand-teal">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
-                </div>
-                <span className="text-[12px] font-semibold text-brand-navy/90 tracking-tight">
-                  Clean, stimulant-free formulation
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-brand-ice-blue flex items-center justify-center flex-shrink-0 text-brand-teal">
-                  <ShieldCheck className="w-3.5 h-3.5 text-brand-cyan" />
-                </div>
-                <span className="text-[12px] font-semibold text-brand-navy/90 tracking-tight">
-                  Developed for modern lifestyles
-                </span>
-              </div>
+              {benefits.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-full bg-brand-ice-blue flex items-center justify-center flex-shrink-0 text-brand-teal">
+                      <Icon className="w-3.5 h-3.5 text-brand-cyan" />
+                    </div>
+                    <span className="text-[12px] font-semibold text-brand-navy/90 tracking-tight">
+                      {item.text}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
-
           </div>
         </div>
       </div>

@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TestimonialCarousel from './components/TestimonialCarousel';
+// Original Partnership Section (Option 1) - Preserved for future use
 import PartnershipSection from './components/PartnershipSection';
+// Alternative Partnership Section (Option 2) - Client-approved design direction
+import PartnershipSectionAlt from './components/PartnershipSectionAlt';
 import PartnershipPage from './components/PartnershipPage';
 import ProductSection from './components/ProductSection';
 import HydrationProcess from './components/HydrationProcess';
@@ -67,8 +70,16 @@ export default function App() {
         {/* 3. Customer testimonial carousel */}
         <TestimonialCarousel />
 
-        {/* Official Partnership Section (Burnley FC) */}
-        <PartnershipSection onNavigate={navigateToPartnership} />
+        {/* =========================================================================
+            OFFICIAL PARTNERSHIP SECTION (BURNLEY FC) - DESIGN DIRECTION OPTIONS
+            To switch designs, comment/uncomment the respective component below.
+            ========================================================================= */}
+        
+        {/* OPTION 1: Original Partnership Section (Preserved for future use) */}
+        {/* <PartnershipSection onNavigate={navigateToPartnership} /> */}
+
+        {/* OPTION 2: Alternative Client-Approved Partnership Section (Active) */}
+        <PartnershipSectionAlt onNavigate={navigateToPartnership} />
 
         {/* 4. Teal product showcase section with three product cards */}
         <ProductSection />
